@@ -5,6 +5,7 @@
 ![ZOBON Logo](https://img.shields.io/badge/ZOBON-Zero%20Bias%20Online-blue?style=for-the-badge&logo=lightning&logoColor=white)
 
 **🏆 Revolutionizing Ethical Marketing in India's EV Revolution**
+
 [![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)](https://www.python.org/)
 [![React](https://img.shields.io/badge/React-18+-61DAFB.svg)](https://reactjs.org/)
 [![Kafka](https://img.shields.io/badge/Apache%20Kafka-2.8+-231F20.svg)](https://kafka.apache.org/)
@@ -62,7 +63,7 @@ ZOBON (Zero Bias Online) is a **real-time trust & bias monitoring system** speci
 
 <div align="center">
 
-![Architecture Diagram](ZOBON-Team/Images/Architecture.jpeg)
+![Architecture Diagram](https://github.com/abhylash/ZOBON-Team/blob/main/Images/Architecture.jpeg)
 
 **Enterprise-Grade Architecture with Real-Time Processing**
 
@@ -88,7 +89,7 @@ graph TB
 ### 🎨 **Main Dashboard - Real-Time Intelligence**
 <div align="center">
 
-![Main Dashboard](ZOBON-Team/Images/FirstUIDashboard.jpeg)
+![Main Dashboard](https://github.com/abhylash/ZOBON-Team/blob/main/Images/FirstUIDashboard.jpeg)
 
 **Complete overview with trust scores, alerts, and campaign metrics**
 
@@ -97,7 +98,7 @@ graph TB
 ### 📊 **Brand Performance Analytics**
 <div align="center">
 
-![Brand Analytics](ZOBON-Team/Images/Brands_Graphs.jpeg)
+![Brand Analytics](https://github.com/abhylash/ZOBON-Team/blob/main/Images/Brands_Graphs.jpeg)
 
 **Comparative analysis across major Indian EV brands**
 
@@ -106,7 +107,7 @@ graph TB
 ### 💭 **Sentiment Analysis Dashboard**
 <div align="center">
 
-![Sentiment Dashboard](ZOBON-Team/Images/SentimentDashboard.jpeg)
+![Sentiment Dashboard](https://github.com/abhylash/ZOBON-Team/blob/main/Images/SentimentDashboard.jpeg)
 
 **Real-time sentiment tracking across multiple channels**
 
@@ -115,7 +116,7 @@ graph TB
 ### 🚨 **Alert & Bias Monitoring**
 <div align="center">
 
-![Alert Bias Table](ZOBON-Team/Images/AlertBIasTable.jpeg)
+![Alert Bias Table](https://github.com/abhylash/ZOBON-Team/blob/main/Images/AlertBIasTable.jpeg)
 
 **Comprehensive bias detection with severity classification**
 
@@ -288,7 +289,7 @@ python3 reports/generate_pdf_report.py --brand "Tata Motors" --output tata_repor
 
 <div align="center">
 
-![SQL Assistant](ZOBON-Team/Images/SQL_asssitant.jpeg)
+![SQL Assistant](https://github.com/abhylash/ZOBON-Team/blob/main/Images/SQL_asssitant.jpeg)
 
 **Natural Language to SQL Query Interface**
 
@@ -359,16 +360,18 @@ Powered by **Gemini Pro + FAISS + LangChain**, our RAG assistant answers complex
 - Scalable microservices design
 - Comprehensive monitoring
 - Professional reporting suite
+
 ---
 
 ## 🧑‍💻 **Built by**
 
 <div align="center">
 
-**Abhylash & Team** for TeXpedition - Epsilon’s campus hackathon
+**Abhylash & Team** for TeXpedition is Epsilon’s hackathon
 
 *"Building ethical, inclusive EV campaigns for India's sustainable future"* 🚗⚡
 
 ---
+
 
 </div>
