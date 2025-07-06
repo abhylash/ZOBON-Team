@@ -6,7 +6,6 @@
 
 **🏆 Revolutionizing Ethical Marketing in India's EV Revolution**
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)](https://www.python.org/)
 [![React](https://img.shields.io/badge/React-18+-61DAFB.svg)](https://reactjs.org/)
 [![Kafka](https://img.shields.io/badge/Apache%20Kafka-2.8+-231F20.svg)](https://kafka.apache.org/)
@@ -288,13 +287,6 @@ Powered by **Gemini Pro + FAISS + LangChain**, our RAG assistant answers complex
 - ✅ **Proactive bias prevention** tools
 - ✅ **Automated compliance** monitoring
 - ✅ **AI-powered insights** for strategy
-
----
-
-## 📜 **License**
-
-MIT License – Feel free to use, fork, and deploy with appropriate credit.
-
 ---
 
 ## 🧑‍💻 **Built by**
@@ -306,15 +298,5 @@ MIT License – Feel free to use, fork, and deploy with appropriate credit.
 *"Building ethical, inclusive EV campaigns for India's sustainable future"* 🚗⚡
 
 ---
-
-### 🏆 **Why ZOBON Wins**
-
-✨ **Innovation**: First-of-its-kind ethical marketing intelligence platform  
-🎯 **Impact**: Addresses real problems in India's EV ecosystem  
-🛠️ **Technology**: Cutting-edge AI + Big Data architecture  
-📊 **Scalability**: Cloud-native design for enterprise deployment  
-🌍 **Vision**: Driving India's transition to ethical, sustainable mobility  
-
-**Ready to revolutionize ethical marketing in India's EV space!** 🚀
 
 </div>
