@@ -5,7 +5,6 @@
 ![ZOBON Logo](https://img.shields.io/badge/ZOBON-Zero%20Bias%20Online-blue?style=for-the-badge&logo=lightning&logoColor=white)
 
 **🏆 Revolutionizing Ethical Marketing in India's EV Revolution**
-
 [![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)](https://www.python.org/)
 [![React](https://img.shields.io/badge/React-18+-61DAFB.svg)](https://reactjs.org/)
 [![Kafka](https://img.shields.io/badge/Apache%20Kafka-2.8+-231F20.svg)](https://kafka.apache.org/)
@@ -34,7 +33,7 @@ ZOBON (Zero Bias Online) is a **real-time trust & bias monitoring system** speci
 ## 🌟 **Key Features**
 
 ### 🔍 **Real-Time Monitoring**
-- **Multi-source ingestion**: Reddit, YouTube, News APIs
+- **Multi-source ingestion**: Reddit, YouTube, and News APIs
 - **Live stream processing** with Apache Kafka + Spark
 - **Instant bias detection** using Gemini Pro LLM
 - **Trust score calculation** with custom algorithms
@@ -61,6 +60,14 @@ ZOBON (Zero Bias Online) is a **real-time trust & bias monitoring system** speci
 
 ## 🏗️ **Architecture Overview**
 
+<div align="center">
+
+![Architecture Diagram](ZOBON-Team/Images/Architecture.jpeg)
+
+**Enterprise-Grade Architecture with Real-Time Processing**
+
+</div>
+
 ```mermaid
 graph TB
     A[Data Sources] --> B[Apache Kafka]
@@ -74,16 +81,43 @@ graph TB
     J[RAG Assistant] --> E
 ```
 
-![Architecture Diagram](Images/Screenshot from 2025-07-06 20-38-11.png)
-
 ---
 
-## 🖥️ **Dashboard Preview**
+## 🖥️ **Dashboard Gallery**
 
+### 🎨 **Main Dashboard - Real-Time Intelligence**
 <div align="center">
 
-### Trust Score Analytics | Alert Distribution | Bias Heatmap
-![Trust Score Bubble Chart](Images/Screenshot from 2025-07-06 20-38-45.png) ![Alert Severity Pie](Images/Screenshot from 2025-07-06 20-39-04.png) ![Bias Heatmap](Images/Screenshot from 2025-07-06 20-39-20.png)
+![Main Dashboard](ZOBON-Team/Images/FirstUIDashboard.jpeg)
+
+**Complete overview with trust scores, alerts, and campaign metrics**
+
+</div>
+
+### 📊 **Brand Performance Analytics**
+<div align="center">
+
+![Brand Analytics](ZOBON-Team/Images/Brands_Graphs.jpeg)
+
+**Comparative analysis across major Indian EV brands**
+
+</div>
+
+### 💭 **Sentiment Analysis Dashboard**
+<div align="center">
+
+![Sentiment Dashboard](ZOBON-Team/Images/SentimentDashboard.jpeg)
+
+**Real-time sentiment tracking across multiple channels**
+
+</div>
+
+### 🚨 **Alert & Bias Monitoring**
+<div align="center">
+
+![Alert Bias Table](ZOBON-Team/Images/AlertBIasTable.jpeg)
+
+**Comprehensive bias detection with severity classification**
 
 </div>
 
@@ -147,8 +181,6 @@ graph TB
 ---
 
 ## 📊 **Real-Time Data Flow**
-
-![Data Flow Diagram](Images/Screenshot from 2025-07-06 20-40-37.png)
 
 **Flow Process:**
 1. **Data Ingestion** → Reddit/YouTube/News APIs
@@ -217,8 +249,6 @@ npm install && npm start
 - **📱 SMS**: Critical alerts only
 - **📊 Dashboard**: Real-time visual alerts
 
-![Alert System](Images/Screenshot from 2025-07-06 20-41-41.png)
-
 ---
 
 ## 📈 **AWS CloudWatch Integration**
@@ -228,8 +258,6 @@ npm install && npm start
 - **🎯 Key Metrics**: TrustScore, BiasDetected, AlertCount
 - **📋 Logs**: Daily structured logs by source & brand
 - **🚨 Alarms**: Auto-trigger on threshold breaches
-
-![CloudWatch Dashboard](Images/Screenshot from 2025-07-06 20-41-48.png)
 
 **Custom Dashboards Available:**
 - Trust Score Trends
@@ -258,6 +286,14 @@ python3 reports/generate_pdf_report.py --brand "Tata Motors" --output tata_repor
 
 ## 🤖 **Ask Your Data (RAG Assistant)**
 
+<div align="center">
+
+![SQL Assistant](ZOBON-Team/Images/SQL_asssitant.jpeg)
+
+**Natural Language to SQL Query Interface**
+
+</div>
+
 Powered by **Gemini Pro + FAISS + LangChain**, our RAG assistant answers complex questions:
 
 **Example Queries:**
@@ -271,6 +307,7 @@ Powered by **Gemini Pro + FAISS + LangChain**, our RAG assistant answers complex
 - 📊 Data-driven responses
 - 🔍 Source citation
 - 📈 Trend analysis
+- 💬 SQL query generation from natural language
 
 ---
 
@@ -287,13 +324,48 @@ Powered by **Gemini Pro + FAISS + LangChain**, our RAG assistant answers complex
 - ✅ **Proactive bias prevention** tools
 - ✅ **Automated compliance** monitoring
 - ✅ **AI-powered insights** for strategy
+
+### **Key Metrics Tracked:**
+- **Trust Score**: 0-100 scale across all campaigns
+- **Bias Categories**: Urban, Elitist, Demographic, Gender-based
+- **Sentiment Analysis**: Positive, Negative, Neutral with confidence
+- **Alert Severity**: Low, Medium, High, Critical classification
+- **Brand Comparison**: Relative performance across competitors
+
+---
+
+## 🏆 **Competitive Advantages**
+
+### **🎯 India-Specific Focus**
+- Tailored for Indian EV market dynamics
+- Multi-language sentiment analysis
+- Cultural bias detection algorithms
+- Regional campaign optimization
+
+### **⚡ Real-Time Processing**
+- Sub-second bias detection
+- Instant alert notifications
+- Live dashboard updates
+- Streaming data architecture
+
+### **🤖 AI-Powered Intelligence**
+- Gemini Pro LLM integration
+- Custom bias scoring algorithms
+- Predictive analytics capabilities
+- Natural language query interface
+
+### **🔧 Enterprise-Ready**
+- Cloud-native architecture
+- Scalable microservices design
+- Comprehensive monitoring
+- Professional reporting suite
 ---
 
 ## 🧑‍💻 **Built by**
 
 <div align="center">
 
-**Abhylash & Team** for ZOBON Hackathon 2025
+**Abhylash & Team** for TeXpedition - Epsilon’s campus hackathon
 
 *"Building ethical, inclusive EV campaigns for India's sustainable future"* 🚗⚡
 
