@@ -1,0 +1,238 @@
+/* SentimentTrendChart.css */
+.chart-container {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e8f5e8;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.chart-container:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
+}
+
+.chart-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0;
+  padding: 1.5rem 1.5rem 0.5rem 1.5rem;
+  background: linear-gradient(135deg, #f8fffe 0%, #ecfdf5 100%);
+  border-bottom: 2px solid #d1fae5;
+  position: relative;
+}
+
+.chart-title::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 1.5rem;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #10b981, #34d399);
+  border-radius: 2px;
+}
+
+.chart-wrapper {
+  padding: 1.5rem;
+  background: white;
+  min-height: 400px;
+}
+
+.chart-no-data {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  background: #f9fafb;
+  margin: 1.5rem;
+  border-radius: 12px;
+  border: 2px dashed #d1d5db;
+}
+
+.chart-no-data p {
+  color: #6b7280;
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.custom-tooltip {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  border-left: 4px solid #10b981;
+  min-width: 160px;
+}
+
+.tooltip-label {
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0 0 0.5rem 0;
+  font-size: 0.9rem;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 0.5rem;
+}
+
+.tooltip-entry {
+  margin: 0.25rem 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tooltip-entry::before {
+  content: '●';
+  font-size: 1.2rem;
+  color: inherit;
+}
+
+.chart-summary {
+  background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
+  padding: 1.5rem;
+  border-top: 1px solid #d1fae5;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+}
+
+.summary-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e8f5e8;
+  transition: all 0.3s ease;
+}
+
+.summary-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.summary-label {
+  font-size: 0.85rem;
+  color: #6b7280;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.summary-value {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.summary-value.sentiment {
+  color: #8b5cf6;
+}
+
+.summary-value.trust {
+  color: #10b981;
+}
+
+.summary-value.mentions {
+  color: #f59e0b;
+}
+
+.summary-value::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.8;
+}
+
+/* Recharts custom styling */
+.recharts-cartesian-axis-tick-value {
+  font-size: 12px;
+  fill: #6b7280;
+  font-weight: 500;
+}
+
+.recharts-legend-item-text {
+  color: #374151 !important;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.recharts-cartesian-grid-horizontal line,
+.recharts-cartesian-grid-vertical line {
+  stroke: #f3f4f6;
+  stroke-width: 1;
+}
+
+.recharts-active-dot {
+  stroke: white;
+  stroke-width: 3;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.recharts-area-curve {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .chart-title {
+    font-size: 1.25rem;
+    padding: 1rem 1rem 0.5rem 1rem;
+  }
+  
+  .chart-wrapper {
+    padding: 1rem;
+  }
+  
+  .chart-summary {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  
+  .summary-item {
+    padding: 0.75rem;
+  }
+  
+  .summary-value {
+    font-size: 1.25rem;
+  }
+  
+  .custom-tooltip {
+    min-width: 140px;
+    padding: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .chart-title {
+    font-size: 1.1rem;
+  }
+  
+  .chart-wrapper {
+    padding: 0.75rem;
+  }
+  
+  .summary-value {
+    font-size: 1.1rem;
+  }
+  
+  .recharts-cartesian-axis-tick-value {
+    font-size: 10px;
+  }
+}

@@ -1,0 +1,673 @@
+/* Unified Zobon EV Dashboard - White and Green Theme */
+
+/* Base styling and animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(16, 185, 129, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(16, 185, 129, 0.6); }
+}
+
+@keyframes electric-pulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes particle-float {
+  0% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-10px) rotate(120deg); }
+  66% { transform: translateY(5px) rotate(240deg); }
+  100% { transform: translateY(0px) rotate(360deg); }
+}
+
+@keyframes slide-in {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Main dashboard container - White background with green accents */
+.zobon-dashboard {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fffe 25%, #ecfdf5 50%, #d1fae5 100%);
+  position: relative;
+  overflow: hidden;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Enhanced background elements with green tones */
+.zobon-dashboard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 20%, rgba(16, 185, 129, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(52, 211, 153, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 40% 60%, rgba(74, 222, 128, 0.04) 0%, transparent 50%);
+  animation: gradient-shift 20s ease infinite;
+  background-size: 400% 400%;
+  pointer-events: none;
+}
+
+/* Floating particles with green tones */
+.zobon-dashboard::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(2px 2px at 20% 30%, rgba(16, 185, 129, 0.6), transparent),
+    radial-gradient(2px 2px at 40% 70%, rgba(52, 211, 153, 0.4), transparent),
+    radial-gradient(1px 1px at 90% 40%, rgba(74, 222, 128, 0.3), transparent),
+    radial-gradient(1px 1px at 60% 90%, rgba(34, 197, 94, 0.3), transparent);
+  background-size: 200px 200px, 300px 300px, 150px 150px, 250px 250px;
+  animation: particle-float 15s infinite linear;
+  pointer-events: none;
+}
+
+/* Dashboard header */
+.zobon-header {
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+  animation: slide-in 0.8s ease-out;
+}
+
+.zobon-header h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #10b981, #34d399, #4ade80);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 30px rgba(16, 185, 129, 0.3);
+  animation: pulse-glow 3s ease-in-out infinite;
+  position: relative;
+}
+
+.zobon-header h1::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, #10b981, #34d399);
+  border-radius: 2px;
+  animation: electric-pulse 2s ease-in-out infinite;
+}
+
+.zobon-header p {
+  color: #6b7280;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.zobon-header .subtitle {
+  color: #9ca3af;
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+/* Grid layout with staggered animations */
+.zobon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  position: relative;
+  z-index: 10;
+}
+
+.zobon-grid > * {
+  animation: slide-in 0.6s ease-out;
+}
+
+.zobon-grid > *:nth-child(1) { animation-delay: 0.1s; }
+.zobon-grid > *:nth-child(2) { animation-delay: 0.2s; }
+.zobon-grid > *:nth-child(3) { animation-delay: 0.3s; }
+.zobon-grid > *:nth-child(4) { animation-delay: 0.4s; }
+
+@media (max-width: 1200px) {
+  .zobon-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Chart containers - White background with green accents */
+.zobon-chart-container {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e8f5e8;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.zobon-chart-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 0.6), transparent);
+  animation: electric-pulse 2s ease-in-out infinite;
+}
+
+.zobon-chart-container:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
+}
+
+/* Chart headers - Green gradient background */
+.zobon-chart-header {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0;
+  padding: 1.5rem 1.5rem 0.5rem 1.5rem;
+  background: linear-gradient(135deg, #f8fffe 0%, #ecfdf5 100%);
+  border-bottom: 2px solid #d1fae5;
+  position: relative;
+  overflow: hidden;
+}
+
+.zobon-chart-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 0.1), transparent);
+  transition: left 0.6s ease;
+}
+
+.zobon-chart-container:hover .zobon-chart-header::before {
+  left: 100%;
+}
+
+.zobon-chart-header::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 1.5rem;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #10b981, #34d399);
+  border-radius: 2px;
+}
+
+.zobon-chart-header h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.zobon-chart-header .pulse-dot {
+  width: 8px;
+  height: 8px;
+  background: #10b981;
+  border-radius: 50%;
+  animation: electric-pulse 2s ease-in-out infinite;
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
+}
+
+.zobon-chart-header p {
+  color: #6b7280;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* Chart content - White background */
+.zobon-chart-content {
+  padding: 1.5rem;
+  background: white;
+  min-height: 400px;
+  position: relative;
+}
+
+/* Chart no data state */
+.zobon-chart-no-data {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  background: #f9fafb;
+  margin: 1.5rem;
+  border-radius: 12px;
+  border: 2px dashed #d1d5db;
+}
+
+.zobon-chart-no-data p {
+  color: #6b7280;
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* Chart summary - Green gradient background */
+.zobon-chart-summary {
+  background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
+  padding: 1.5rem;
+  border-top: 1px solid #d1fae5;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+}
+
+.zobon-summary-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e8f5e8;
+  transition: all 0.3s ease;
+}
+
+.zobon-summary-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.zobon-summary-label {
+  font-size: 0.85rem;
+  color: #6b7280;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.zobon-summary-value {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.zobon-summary-value.sentiment {
+  color: #10b981;
+}
+
+.zobon-summary-value.trust {
+  color: #10b981;
+}
+
+.zobon-summary-value.mentions {
+  color: #059669;
+}
+
+.zobon-summary-value.ev-stats {
+  color: #047857;
+}
+
+.zobon-summary-value::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.8;
+}
+
+/* Custom tooltip styling */
+.zobon-tooltip,
+.unified-tooltip {
+  background: white !important;
+  border: 1px solid #e5e7eb !important;
+  border-radius: 12px !important;
+  padding: 1rem !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15) !important;
+  border-left: 4px solid #10b981 !important;
+  min-width: 160px !important;
+}
+
+.zobon-tooltip-label,
+.unified-tooltip-label {
+  font-weight: 700 !important;
+  color: #1f2937 !important;
+  margin: 0 0 0.5rem 0 !important;
+  font-size: 0.9rem !important;
+  border-bottom: 1px solid #e5e7eb !important;
+  padding-bottom: 0.5rem !important;
+}
+
+.zobon-tooltip-item,
+.unified-tooltip-entry {
+  margin: 0.25rem 0 !important;
+  font-size: 0.85rem !important;
+  font-weight: 600 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  color: #374151 !important;
+}
+
+.zobon-tooltip-item::before,
+.unified-tooltip-entry::before {
+  content: '●' !important;
+  font-size: 1.2rem !important;
+  color: inherit !important;
+}
+
+.zobon-tooltip-indicator {
+  border-radius: 50% !important;
+  box-shadow: 0 0 10px currentColor !important;
+}
+
+/* Loading state */
+.zobon-loading {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fffe 25%, #ecfdf5 50%, #d1fae5 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.zobon-loading::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(2px 2px at 20% 30%, rgba(16, 185, 129, 0.6), transparent),
+    radial-gradient(2px 2px at 40% 70%, rgba(52, 211, 153, 0.4), transparent),
+    radial-gradient(1px 1px at 90% 40%, rgba(74, 222, 128, 0.3), transparent);
+  background-size: 200px 200px, 300px 300px, 150px 150px;
+  animation: particle-float 10s infinite linear;
+  pointer-events: none;
+}
+
+.zobon-loading-content {
+  text-align: center;
+  z-index: 10;
+  position: relative;
+}
+
+.zobon-loading-spinner {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 2rem;
+}
+
+.zobon-loading-spinner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 4px solid rgba(16, 185, 129, 0.2);
+  border-top: 4px solid #10b981;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.zobon-loading-spinner::after {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  right: 8px;
+  bottom: 8px;
+  border: 2px solid rgba(16, 185, 129, 0.1);
+  border-radius: 50%;
+  animation: electric-pulse 2s ease-in-out infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.zobon-loading-text {
+  color: #10b981;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.5px;
+}
+
+.zobon-loading-subtext {
+  color: #6b7280;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+/* Error state */
+.zobon-error {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ffffff 0%, #fef2f2 25%, #fee2e2 50%, #fecaca 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.zobon-error-content {
+  text-align: center;
+  padding: 3rem;
+  background: white;
+  border-radius: 24px;
+  border: 1px solid #fca5a5;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+}
+
+.zobon-error-icon {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  animation: float 3s ease-in-out infinite;
+  color: #ef4444;
+}
+
+.zobon-error-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ef4444;
+  margin-bottom: 1rem;
+}
+
+.zobon-error-message {
+  color: #6b7280;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.zobon-error-button {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+.zobon-error-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(239, 68, 68, 0.4);
+}
+
+/* Footer */
+.zobon-footer {
+  margin-top: 3rem;
+  text-align: center;
+  padding: 2rem;
+  border-top: 1px solid #d1fae5;
+  position: relative;
+  z-index: 10;
+  background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
+}
+
+.zobon-footer-text {
+  color: #10b981;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.zobon-footer-badges {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.zobon-footer-badge {
+  color: #047857;
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  background: white;
+  border-radius: 20px;
+  border: 1px solid #a7f3d0;
+  transition: all 0.3s ease;
+}
+
+.zobon-footer-badge:hover {
+  background: #f0fdf4;
+  transform: translateY(-2px);
+}
+
+/* Recharts custom styling */
+.recharts-cartesian-axis-tick-value {
+  font-size: 12px;
+  fill: #6b7280;
+  font-weight: 500;
+}
+
+.recharts-legend-item-text {
+  color: #374151 !important;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.recharts-cartesian-grid-horizontal line,
+.recharts-cartesian-grid-vertical line {
+  stroke: #f3f4f6;
+  stroke-width: 1;
+}
+
+.recharts-active-dot {
+  stroke: white;
+  stroke-width: 3;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.recharts-area-curve {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+/* Custom scrollbar */
+.zobon-dashboard::-webkit-scrollbar {
+  width: 8px;
+}
+
+.zobon-dashboard::-webkit-scrollbar-track {
+  background: #f3f4f6;
+}
+
+.zobon-dashboard::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #10b981, #34d399);
+  border-radius: 4px;
+}
+
+.zobon-dashboard::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #059669, #10b981);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .zobon-header h1 {
+    font-size: 2rem;
+  }
+  
+  .zobon-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 1rem;
+  }
+  
+  .zobon-chart-content {
+    padding: 1rem;
+  }
+  
+  .zobon-chart-summary {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  
+  .zobon-summary-item {
+    padding: 0.75rem;
+  }
+  
+  .zobon-summary-value {
+    font-size: 1.25rem;
+  }
+  
+  .zobon-footer-badges {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .zobon-header h1 {
+    font-size: 1.5rem;
+  }
+  
+  .zobon-chart-header {
+    padding: 1rem 1rem 0.5rem 1rem;
+  }
+  
+  .zobon-chart-header h2 {
+    font-size: 1.2rem;
+  }
+  
+  .zobon-summary-value {
+    font-size: 1.1rem;
+  }
+  
+  .recharts-cartesian-axis-tick-value {
+    font-size: 10px;
+  }
+}

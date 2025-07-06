@@ -1,0 +1,32 @@
+# Core ingestion & processing
+praw==7.7.1
+requests==2.31.0
+python-dotenv==1.0.0
+kafka-python==2.0.2
+pyspark==3.4.1
+vaderSentiment==3.3.2
+psycopg2-binary==2.9.7
+boto3==1.28.25
+pandas==2.0.3
+numpy==1.24.3  # Note: compatible with TensorFlow if needed
+
+# Flask backend
+flask==2.3.2
+flask-cors==4.0.0
+
+# For PDF reports
+reportlab==4.0.4
+
+# LangChain stack
+langchain==0.2.0  # or latest stable
+faiss-cpu==1.7.4
+huggingface-hub==0.21.4
+chromadb==0.4.24
+
+# Gemini API (Google Generative AI)
+google-generativeai==0.8.5
+google-api-core==2.25.1
+google-auth==2.40.3
+grpcio==1.73.1
+grpcio-status==1.71.2
+proto-plus==1.26.1

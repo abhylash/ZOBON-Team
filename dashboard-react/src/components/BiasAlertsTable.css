@@ -1,0 +1,373 @@
+/* BiasAlertsTable.css */
+.alerts-container {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e8f5e8;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.alerts-container:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
+}
+
+.alerts-header {
+  background: linear-gradient(135deg, #f8fffe 0%, #ecfdf5 100%);
+  padding: 1.5rem;
+  border-bottom: 2px solid #d1fae5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.alerts-header h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0;
+  position: relative;
+}
+
+.alerts-header h3::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #10b981, #34d399);
+  border-radius: 2px;
+}
+
+.alerts-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.refresh-button {
+  background: linear-gradient(135deg, #10b981, #34d399);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.25rem;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+}
+
+.refresh-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+}
+
+.refresh-button:active {
+  transform: translateY(0);
+}
+
+.refresh-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.alerts-count {
+  background: #f3f4f6;
+  color: #6b7280;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: 1px solid #e5e7eb;
+}
+
+.alerts-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  color: #6b7280;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.alerts-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem;
+  text-align: center;
+  color: #ef4444;
+}
+
+.retry-button {
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.retry-button:hover {
+  background: #dc2626;
+  transform: translateY(-2px);
+}
+
+.alerts-empty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
+  margin: 1.5rem;
+  border-radius: 12px;
+  border: 2px dashed #10b981;
+}
+
+.alerts-empty p {
+  color: #059669;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.alerts-table-container {
+  overflow-x: auto;
+  margin: 1.5rem;
+}
+
+.alerts-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.alerts-table thead {
+  background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+}
+
+.alerts-table th {
+  padding: 1rem;
+  text-align: left;
+  font-weight: 700;
+  color: #374151;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.alerts-table td {
+  padding: 1rem;
+  border-bottom: 1px solid #f3f4f6;
+  color: #1f2937;
+  font-size: 0.9rem;
+}
+
+.alert-row {
+  transition: all 0.3s ease;
+}
+
+.alert-row:hover {
+  background: #f8fffe;
+  transform: scale(1.01);
+}
+
+.alert-row:last-child td {
+  border-bottom: none;
+}
+
+.alert-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  min-width: 80px;
+  justify-content: center;
+}
+
+.alert-critical {
+  background: #fee2e2;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+}
+
+.alert-high {
+  background: #fef3c7;
+  color: #d97706;
+  border: 1px solid #fde68a;
+}
+
+.alert-medium {
+  background: #dbeafe;
+  color: #2563eb;
+  border: 1px solid #bfdbfe;
+}
+
+.alert-low {
+  background: #d1fae5;
+  color: #059669;
+  border: 1px solid #a7f3d0;
+}
+
+.alert-brand strong {
+  color: #1f2937;
+  font-weight: 700;
+}
+
+.trust-score {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.trust-score.critical {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.trust-score.warning {
+  background: #fef3c7;
+  color: #d97706;
+}
+
+.trust-score.good {
+  background: #d1fae5;
+  color: #059669;
+}
+
+.text-sample {
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #6b7280;
+  font-size: 0.85rem;
+  cursor: help;
+}
+
+.text-sample:hover {
+  color: #374151;
+}
+
+.alert-timestamp {
+  color: #6b7280;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.resolve-button {
+  background: linear-gradient(135deg, #10b981, #34d399);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 80px;
+}
+
+.resolve-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+}
+
+.resolve-button:active {
+  transform: translateY(0);
+}
+
+.resolve-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .alerts-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .alerts-actions {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+  
+  .alerts-table-container {
+    margin: 1rem;
+  }
+  
+  .alerts-table {
+    font-size: 0.85rem;
+  }
+  
+  .alerts-table th,
+  .alerts-table td {
+    padding: 0.75rem 0.5rem;
+  }
+  
+  .text-sample {
+    max-width: 150px;
+  }
+  
+  .alert-badge {
+    min-width: 70px;
+    padding: 0.4rem 0.6rem;
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .alerts-header h3 {
+    font-size: 1.25rem;
+  }
+  
+  .alerts-table {
+    font-size: 0.8rem;
+  }
+  
+  .alerts-table th,
+  .alerts-table td {
+    padding: 0.5rem 0.25rem;
+  }
+  
+  .text-sample {
+    max-width: 100px;
+  }
+  
+  .trust-score {
+    font-size: 0.8rem;
+    padding: 0.2rem 0.5rem;
+  }
+  
+  .resolve-button {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.8rem;
+    min-width: 70px;
+  }
+}
