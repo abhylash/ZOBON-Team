@@ -367,7 +367,7 @@ Powered by **Gemini Pro + FAISS + LangChain**, our RAG assistant answers complex
 
 <div align="center">
 
-**Abhylash & Team** for TeXpedition is Epsilon’s hackathon
+**Abhilash & Team** for TeXpedition Epsilon’s hackathon
 
 *"Building ethical, inclusive EV campaigns for India's sustainable future"* 🚗⚡
 
